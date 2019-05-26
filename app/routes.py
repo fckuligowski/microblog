@@ -37,6 +37,7 @@ def login():
     user = User.query.filter_by(username=form.username.data).first()
     if user is None or not user.check_password(form.password.data):
       flash('Invalid username or password')
+      return redirect(url_for('login'))
     login_user(user, remember=form.remember_me.data)
     next_page = request.args.get('next')
     if not next_page or url_parse(next_page).netloc != '':
@@ -76,7 +77,7 @@ def user(username):
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
