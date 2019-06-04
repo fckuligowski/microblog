@@ -1,5 +1,4 @@
-2019-05-26 16:04:18,281 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-26 16:04:28,698 ERROR: Exception on /login [POST] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+2019-05-27 12:15:27,242 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -11,13 +10,29 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/app/routes.py", line 40, in login
-    login_user(user, remember=form.remember_me.data)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 158, in login_user
-    if not force and not user.is_active:
-AttributeError: 'NoneType' object has no attribute 'is_active'
-2019-05-26 16:13:22,920 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-26 16:13:35,012 ERROR: Exception on /login [POST] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/fk/py/microblog/app/routes.py", line 141, in explore
+    next_url=next_url, prev_url=prev_url)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
+    {%block content %}{% endblock %}
+  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+UndefinedError: 'None' has no attribute 'avatar'
+2019-05-27 12:17:55,944 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
+2019-05-27 12:18:19,925 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,12 +44,28 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/app/routes.py", line 40, in login
-    login_user(user, remember=form.remember_me.data)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 158, in login_user
-    if not force and not user.is_active:
-AttributeError: 'NoneType' object has no attribute 'is_active'
-2019-05-26 16:14:08,573 ERROR: Exception on /login [POST] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/fk/py/microblog/app/routes.py", line 141, in explore
+    next_url=next_url, prev_url=prev_url)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
+    {%block content %}{% endblock %}
+  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+UndefinedError: 'None' has no attribute 'avatar'
+2019-05-27 12:18:49,178 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -46,14 +77,28 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/app/routes.py", line 40, in login
-    login_user(user, remember=form.remember_me.data)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 158, in login_user
-    if not force and not user.is_active:
-AttributeError: 'NoneType' object has no attribute 'is_active'
-2019-05-26 16:23:38,156 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-26 16:23:43,308 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-26 16:23:50,844 ERROR: Exception on /login [POST] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/fk/py/microblog/app/routes.py", line 141, in explore
+    next_url=next_url, prev_url=prev_url)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
+    {%block content %}{% endblock %}
+  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+UndefinedError: 'None' has no attribute 'avatar'
+2019-05-27 12:18:56,552 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -65,38 +110,25 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/app/routes.py", line 40, in login
-    login_user(user, remember=form.remember_me.data)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 158, in login_user
-    if not force and not user.is_active:
-AttributeError: 'NoneType' object has no attribute 'is_active'
-2019-05-26 16:23:57,096 ERROR: Exception on /login [POST] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/fk/py/microblog/app/routes.py", line 141, in explore
+    next_url=next_url, prev_url=prev_url)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/app/routes.py", line 40, in login
-    login_user(user, remember=form.remember_me.data)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 158, in login_user
-    if not force and not user.is_active:
-AttributeError: 'NoneType' object has no attribute 'is_active'
-2019-05-26 16:25:22,869 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-26 16:30:52,171 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 10:46:12,867 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 10:46:27,783 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 10:59:48,797 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 11:06:08,490 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 11:46:06,841 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 11:58:58,588 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 12:01:47,594 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 12:05:08,534 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 12:07:20,728 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 12:14:54,238 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
-2019-05-27 12:15:07,761 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
+  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
+    {%block content %}{% endblock %}
+  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+UndefinedError: 'None' has no attribute 'avatar'
+2019-05-27 12:22:37,752 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
