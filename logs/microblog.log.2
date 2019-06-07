@@ -1,4 +1,4 @@
-2019-05-27 12:22:43,550 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+2019-05-27 12:26:28,055 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -31,7 +31,8 @@ Traceback (most recent call last):
   File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
     <td><img src="{{ post.author.avatar(36) }}"></td>
 UndefinedError: 'None' has no attribute 'avatar'
-2019-05-27 12:23:43,922 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+2019-05-27 12:30:10,411 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:43]
+2019-05-27 12:30:36,550 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -64,7 +65,21 @@ Traceback (most recent call last):
   File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
     <td><img src="{{ post.author.avatar(36) }}"></td>
 UndefinedError: 'None' has no attribute 'avatar'
-2019-05-27 12:24:08,361 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
+2019-05-27 14:45:49,880 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:45]
+2019-05-27 15:58:10,392 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:45]
+2019-05-27 16:05:02,189 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:45]
+2019-05-27 16:25:57,146 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:45]
+2019-05-27 16:26:49,349 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:45]
+2019-06-02 06:53:21,615 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:47]
+2019-06-02 06:56:24,446 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:47]
+2019-06-02 07:03:49,140 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:47]
+2019-06-02 07:16:36,424 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:49]
+2019-06-02 07:22:59,810 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:49]
+2019-06-04 15:18:16,348 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:51]
+2019-06-04 15:18:32,829 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:51]
+2019-06-04 15:56:05,914 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:51]
+2019-06-04 16:07:14,822 INFO: Microblog startup [in /home/fk/py/microblog/app/__init__.py:74]
+2019-06-04 16:07:45,050 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -78,8 +93,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/fk/py/microblog/app/routes.py", line 48, in explore
-    next_url=next_url, prev_url=prev_url)
+  File "/home/fk/py/microblog/app/main/routes.py", line 61, in explore
+    prev_url=prev_url)
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
@@ -88,45 +103,22 @@ Traceback (most recent call last):
     return self.environment.handle_exception(exc_info, True)
   File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
-    {%block content %}{% endblock %}
-  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
+  File "/home/fk/py/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/fk/py/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/fk/py/microblog/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/fk/py/microblog/app/templates/index.html", line 11, in block "app_content"
     {% include '_post.html' %}
-  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ post.author.avatar(36) }}"></td>
-UndefinedError: 'None' has no attribute 'avatar'
-2019-05-27 12:25:51,800 ERROR: Exception on /explore [GET] [in /home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/fk/py/microblog/app/routes.py", line 48, in explore
-    next_url=next_url, prev_url=prev_url)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/fk/py/microblog/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/fk/py/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/fk/py/microblog/app/templates/base.html", line 30, in top-level template code
-    {%block content %}{% endblock %}
-  File "/home/fk/py/microblog/app/templates/index.html", line 19, in block "content"
-    {% include '_post.html' %}
-  File "/home/fk/py/microblog/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ post.author.avatar(36) }}"></td>
+  File "/home/fk/py/microblog/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
 UndefinedError: 'None' has no attribute 'avatar'
